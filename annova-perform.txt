@@ -1,0 +1,6 @@
+#Create dataframe with the data 
+data_1 <- data.frame(group=c(rep("A",5),rep("B",5),rep("C",5)),value=c(10,12,15,18,20,8,10,12,14,16,5,8,10 ,12,14)) 
+#Perform ANOVA 
+model <- aov(value~ group,data = data_1) 
+#View Anova Table 
+summary(model)

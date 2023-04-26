@@ -1,0 +1,8 @@
+lmmodel <-  lm(mpg ~ hp +cyl+gear+wt,data=TrainData) 
+summary( lmmodel) 
+preds_new <- predict( lmmodel,newdata=TestData) 
+df2<- data.frame(preds_new,TestData$mpg) 
+head(df2) 
+plot(mtcars$hp+mtcars$cyl+mtcars $gear +mtcars$wt,mtcars$mpg) 
+ggplot(fit,aes(mtcars$hp+mtcars$cyl+mtcars$gear +mtcars$wt,mtcars$mpg))+geom_point()+stat_smooth(method=lm,se=FALSE)+geom_segment(ae s(xend=hp,yend=.fitted),color='red',size=0.3) 
+ 

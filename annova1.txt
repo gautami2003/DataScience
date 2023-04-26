@@ -1,0 +1,10 @@
+#Generate 3 sets of data 
+x <- rnorm(50, mean = 10, sd=2) 
+y <- rnorm(50, mean = 12, sd=2) 
+z <- rnorm(50, mean = 14, sd=2) 
+#Combine the data into single frame 
+df <- data.frame(value=c(x,y,z),group = rep(c("x","y","z"),each=50)) 
+#Perform a oneway anova 
+model <- lm(value ~ group,data = df) 
+anova(model) 
+Output

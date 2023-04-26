@@ -1,0 +1,6 @@
+#load mtcars dataset 
+data(mtcars) 
+#Perform anova on mpg by grouping the data by the members of cylinders 
+anova_result <- aov(mpg ~ cyl,data=mtcars) 
+#Print anova summary 
+summary(anova_result) 
