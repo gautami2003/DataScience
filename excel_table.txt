@@ -1,0 +1,29 @@
+stud<- read.csv(file.choose(),sep=",",header=T) 
+names(stud) 
+dim(stud) 
+str(stud) 
+query1<-filter(stud,Marks>750|Class=="TyCs") 
+query1 
+
+stud1<-group_by(stud,Class) 
+stud1 
+query2<-summarise(stud1,mean(Marks)) 
+query2 
+summarise(stud,max(Marks)) 
+summarise(stud,min(Marks)) 
+summarise(stud,n()) 
+summarise(stud,sum(Marks)) 
+query3<-arrange(stud,(Marks)) 
+query3 
+arrange(stud,Name) 
+select(stud,Name) 
+/*show marks belongs to each class */ 
+  filter (stud,Class=="fycs")%>%arrange(Marks) 
+filter (stud,Class=="Sycs")%>%arrange(Marks) 
+filter (stud,Class=="Tycs")%>%arrange(Marks) 
+mutate(stud,Perc=Marks/10) 
+/for max marks of each class/ 
+  stud1<-group_by(stud,Class) 
+stud1 
+query2<-summarize(stud1,max(Marks)) 
+query2 

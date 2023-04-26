@@ -1,0 +1,10 @@
+#Decision tree 
+#load rpart packages 
+library(rpart) 
+#load the iris dataset 
+data(iris) 
+#create a decision tree 
+model<-rpart(Species~.,data=iris) 
+# plot the decision  
+plot(model) 
+text(model,use.n=TRUE,all=TRUE,cex=0.8) 

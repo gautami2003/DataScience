@@ -1,0 +1,5 @@
+library(rpart)
+data(iris)
+model<-rpart(Species~.,data=iris)
+plot(model)
+text(model,use.n = TRUE,all=TRUE,cex=0.8)

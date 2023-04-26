@@ -1,0 +1,21 @@
+#install packages 
+install.packages("stats") 
+install.packages("dplyr") 
+#load required libraries 
+library(stats) 
+library(dplyr) 
+#iris dataset 
+View(iris) 
+#Unsupervised learning 
+mydata <- select(iris,c(1,2,3,4)) 
+#Check PCA eligibility 
+cor(mydata) 
+mean(cor(mydata)) 
+#Principal component analysis 
+PCA = princomp(mydata) 
+#PC loading 
+PCA$loadings 
+#Principal Components 
+PC=PCA$scores 
+View(PC) 
+cor(PC) 
