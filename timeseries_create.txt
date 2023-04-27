@@ -1,0 +1,11 @@
+#Creating Time Series
+sales <- c(435735,465404,474742,477841,501775,503578,521750,562246,572453,592955,607816,6148 64,656448,658781,690422,708860) 
+#Yearly times series 
+sales_ts <- ts(sales,start=2000,end=2015,frequency=1) 
+#Quaterly time series 
+sales_ts <- ts(sales,start=2000,end=2015,frequency = 4) 
+#Monthly time series 
+sales_ts <- ts(sales,start = 2000,end=2015,frequency = 12) 
+#ploting time series 
+plot.ts(sales_ts) 
+ 
