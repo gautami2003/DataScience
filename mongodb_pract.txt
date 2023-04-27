@@ -1,0 +1,29 @@
+show dbs
+use rc
+db.createCollection("Employee")
+show dbs
+db.Employee.insert({RollNo:01,name:"Gautami",Marks:111})
+db.Employee.insert({RollNo:02,name:"Sharvi",Marks:222})
+db.Employee.insert({RollNo:03,name:"Priya",Marks:333})
+db.Employee.insert({RollNo:01,name:"Guru",Marks:444,gender:"Male"})
+db.Employee.find()
+db.Employee.find().pretty()
+db.createCollection("Stud")
+show collections
+show dbs
+use emp
+show collections
+db.createCollection("Employee2")
+use rc
+db.Employee.find({name:"Guru").pretty()
+db.Employee.find({marks:{$gt:10}}).pretty()
+db.Employee.update({name:"Gautami"},{$set:{marks:200}})
+db.Employee.find({name:"Gautami},$set:{gender:"female"}).pretty()
+db.Employee.remove("name":"Sharvi")
+db.Employee.find({},{name:1,_id:0}).pretty()
+db.Employee.find({},{name:1,_id:0}).sort({name:1}).pretty()
+db.Employee.find({},{name:1,_id:0}).sort({name:1}).pretty()
+db.Employee.createIndex({name:1})
+db.Employee.dropIndex({name:1})
+db.Employee.drop()
+show collections
